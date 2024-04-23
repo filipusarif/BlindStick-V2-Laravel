@@ -9,6 +9,39 @@
     <!-- @include('tailwind/config') -->
     @vite('resources/css/app.css')
     @include('component/scrollbar')
+    <style>
+        /* CSS untuk mengatur tampilan titik-titik */
+        .pointOdd {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #3DB8D7; /* Warna titik */
+            border-radius: 50%; /* Agar titik menjadi bulat */
+            animation: blink 8s infinite alternate; /* Animasi kedip */
+        }
+
+        .pointEvent {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #3DB8D7; /* Warna titik */
+            border-radius: 50%; /* Agar titik menjadi bulat */
+            animation: blink 4s infinite alternate; /* Animasi kedip */
+        }
+
+        @keyframes blink {
+            0%,100% {
+                opacity: 0;
+                box-shadow:none;
+            }
+            
+            50% {
+                opacity: 1;
+                box-shadow: 0px 0px 5px 5px rgba(67, 203, 233, 0.4);
+                
+            }
+        }
+    </style>
 </head>
 
 <body class=" bg-slate-900 font-roboto">
@@ -30,8 +63,9 @@
                     <a href="https://www.instagram.com/blindstick10?igsh=cG0yamo2OWZmNTU2" target="_blank"><img width="25px" src="asset\image\instagram.svg" alt="instagram"></a>
                 </div>
             </div>
-            <div class="">
-                <img src="asset\image\Background\MainMapFull.svg" width="200%" alt="MapPolandia">
+            <div class="" id="" style="position: relative;">
+                <img src="asset\image\Background\MainMapFull.svg" width="200%" class="" alt="MapPolandia">
+                <div id="maps" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%]"></div>
             </div>
         </main>
     </section>
@@ -184,7 +218,7 @@
         <main class="container py-10 lg:py-0 mx-auto flex flex-col h-full justify-center items-center ">
             <h1 class="text-[24px] lg:text-[44px] text-center font-extrabold ">Praktis dengan Harga Terjangkau</h1>
             <p class="text-nonActive text-[14px] text-center lg:text-[16px] font-medium">Solusi yang menyediakan kualitas dan kemudahan penggunaan sehari-hari dengan harga yang ramah di kantong.</p>
-            <div class="flex gap-5 flex-wrap flex-col lg:flex-row justify-center items-center w-full mt-10">
+            <div class="flex gap-5 flex-col lg:flex-row justify-center items-center w-full mt-10">
                 <div class="bg-card gap-4 basis-[33%] flex flex-col justify-center p-7 rounded-lg">
                     <div class="flex justify-between items-center">
                         <h3 class="font-bold text-[24px]">Rp 199.900</h3>
@@ -278,7 +312,7 @@
 
     <!-- Bantuan -->
     <section class="bg-primaryOdd min-h-screen lg:h-screen w-full overflow-hidden px-5 lg:px-0  text-[#F2F7EE]" id="Bundle">
-        <main class="container py-10 lg:py-0 mx-auto h-full flex lg:flex-row flex-col gap-5 justify-center items-center ">
+        <main class="container py-10 lg:py-0 mx-auto h-full flex lg:flex-row flex-col-reverse gap-5 justify-center items-center ">
             <div class="basis-[65%] bg-card p-10 flex flex-col h-[500px] gap-1 rounded-lg">
                 <h3 class="font-extrabold text-[24px] lg:text-[30px] ">Perlukan Bantuan? Ajukan Tiket Bantuan </h3>
                 <p class="font-medium text-nonActive text-[14px]">Tim dukungan kami akan segera menghubungi Anda secepatnya melalui email.</p>
@@ -287,15 +321,15 @@
                     <div class="flex flex-col lg:flex-row justify-between w-full gap-2 lg:gap-4 items-center">
                         <div class="flex flex-col basis-[50%]">
                             <label for="name" class=" font-semibold text-[#F2F7EE] mt-5">Nama</label>
-                            <input type="text" name="inputNameKritik" id="name" class="bg-[#232B50] py-2 px-3 rounded-md border-none w-full border-[#2AA7D6] border outline-none ">
+                            <input type="text" name="inputNameKritik" id="name" class="bg-[#232B50] py-2 px-3 rounded-md border-none w-full border-[#2AA7D6] border outline-none " placeholder="Masukkan Nama">
                         </div>
                         <div class="flex flex-col basis-[50%]">
                             <label for="email" class=" font-semibold text-[#F2F7EE] mt-5">Email</label>
-                            <input type="email" name="inputEmailKritik" id="email" class="bg-[#232B50] py-2 px-3 rounded-md border-none border-[#2AA7D6] border outline-none ">
+                            <input type="email" name="inputEmailKritik" id="email" class="bg-[#232B50] py-2 px-3 rounded-md border-none border-[#2AA7D6] border outline-none " placeholder="Masukkan Email">
                         </div>
                     </div>
                     <label for="kritik" class=" font-semibold text-[#F2F7EE] mt-5">Pesan Bantuan</label>
-                    <textarea name="kritik" id="kritik" cols="30" rows="5" style="resize: none;" class="w-full bg-[#232B50] outline-none p-4 rounded-md"></textarea>
+                    <textarea name="kritik" id="kritik" cols="30" rows="5" style="resize: none;" class="w-full bg-[#232B50] outline-none p-4 rounded-md" placeholder="Masukkan Pesan"></textarea>
                     <button type="submit" class="text-right py-3 px-10 mt-5 bg-secondary rounded-lg font-medium">Kirim Pesan</button>
                 </form>
             </div>
@@ -344,7 +378,36 @@
             speechSynthesis.speak(speech);
         }
 
-        //document.addEventListener('DOMContentLoaded', speakOnPageLoad());
+        // JavaScript untuk membuat titik-titik acak
+        function createRandomPoints() {
+            const mapContainer = document.getElementById('maps');
+            const mapWidth = mapContainer.offsetWidth;
+            const mapHeight = mapContainer.offsetHeight;
+
+            // Membersihkan data yang sudah ada sebelum menambahkan yang baru
+            mapContainer.innerHTML = '';
+
+            for (let i = 0; i < 10; i++) { // Ubah 10 menjadi jumlah titik yang diinginkan
+                const point = document.createElement('div');
+                if (Math.random() > 0.5) {
+                    point.classList.add('pointOdd');
+                } else {
+                    point.classList.add('pointEvent'); // Mengubah pointEvent menjadi pointEven
+                }
+                point.style.left = Math.random() * mapWidth + 'px';
+                point.style.top = Math.random() * mapHeight + 'px';
+                mapContainer.appendChild(point);
+            }
+
+            // Panggil kembali fungsi setelah interval tertentu
+            setTimeout(createRandomPoints, 8000);
+        }
+
+        window.onload = function() {
+            createRandomPoints(); // Panggil fungsi pertama kali
+        };
+
+
     </script>
 </body>
 

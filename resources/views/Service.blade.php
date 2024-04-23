@@ -16,37 +16,34 @@
     @include('component/navbar')
 
 
-    <section class=" text-slate-200 bg-gradient-to-tr  from-[#071a30] via-[#215695] via-80% to-[#215695] overflow-hidden min-h-screen w-full relative lg:pt-0 lg:px-0 pt-10 px-5">
-        <div class="">
-            <img src="asset/image/kubus.svg" alt="" class="-left-56 -top-20 absolute opacity-50">
-        </div>
+    <section class=" text-slate-200 bg-primary overflow-hidden min-h-screen w-full relative lg:pt-0 lg:px-0 pt-10 px-5">
 
         <div class="container min-h-[80vh] mx-auto lg:pt-[3%] pt-5 pb-5  relative">
-            <h1 class="text-[200%] text-center font-extrabold leading-[60px] text-transparent bg-clip-text bg-gradient-to-r from-[#2996E5] to-[#28D9F1]">Layanan</h1>
-            <p class="text-center -mt-2 mb-4">Monitoring object di sekitar anda</p>
+            <h1 class="text-[200%] text-center font-extrabold leading-[60px] text-active">Layanan</h1>
+            <p class="text-center -mt-2 mb-4 text-nonActive">Monitoring object di sekitar anda</p>
             <div class="flex lg:flex-row flex-col-reverse items-center justify-center min-h-[80vh]  gap-3">
                 <div class=" flex flex-col basis-[70%] gap-5  w-full h-full lg:h-[80vh] ">
-                    <div class="lg:basis-[70%] h-[200px] lg:h-auto bg-[#173865] flex justify-center items-center rounded-[20px]">
-                        <div class="w-[50%] h-full text-center border-r-[4px] border-[#122F58]">
-                            <h1 class="w-full h-[30%] bg-[#122F58] rounded-tl-[10px] grid place-items-center lg:text-[200%] text-[150%] font-bold">Halangan</h1>
+                    <div class="lg:basis-[70%] h-[200px] lg:h-auto bg-wrapper flex justify-center items-center rounded-[20px]">
+                        <div class="w-[50%] h-full text-center border-r-[4px] border-card">
+                            <h1 class="w-full h-[30%] bg-card rounded-tl-[10px] grid place-items-center lg:text-[200%] text-[150%] font-bold">Halangan</h1>
                             <p class="w-full h-[70%] font-extrabold grid place-items-center text-[170%] lg:text-[300%] " id="obj">Loading</p>
                         </div>
                         <div class="w-[50%] h-full text-center">
-                            <h1 class="w-full h-[30%] bg-[#122F58] rounded-tr-[10px] grid place-items-center lg:text-[200%] text-[150%] font-bold">Jarak</h1>
+                            <h1 class="w-full h-[30%] bg-card rounded-tr-[10px] grid place-items-center lg:text-[200%] text-[150%] font-bold">Jarak</h1>
                             <p class="w-full h-[70%] font-extrabold grid place-items-center text-[170%] lg:text-[300%]" id="jarak">Loading</p>
                         </div>
                     </div>
-                    <div class="bg-[#173865] w-full h-fit flex py-4 rounded-[18px] items-center justify-center gap-5 flex-wrap">
-                        <button class="flex flex-col items-center font-medium bg-[#122F58] p-4 rounded-[10px] drop-shadow-xl   " onclick="speakTo()"><img src="/asset/image/volumeSuara.svg" alt="" width="100px"> Bicara</button>
-                        <a href="/pengguna" class="flex flex-col items-center font-medium bg-[#122F58] p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/user.svg" alt="" width="100px"> Pengguna</a>
-                        <a href="/navigasi" class="flex flex-col items-center font-medium bg-[#122F58] p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/maps.svg" alt="" width="100px"> Navigasi</a>
-                        <a href="/riwayat" class="flex flex-col items-center font-medium bg-[#122F58] p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/history.svg" alt="" width="100px"> Riwayat</a>
-                        <a href="/bantuan" class="flex flex-col items-center font-medium bg-[#122F58] p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/bantuanMenu.svg" alt="" width="100px"> Bantuan</a>
+                    <div class="bg-wrapper w-full h-fit flex py-4 rounded-[18px] items-center justify-center gap-5 flex-wrap">
+                        <button class="flex flex-col items-center font-medium bg-card p-4 rounded-[10px] drop-shadow-xl   " onclick="speakTo()"><img src="/asset/image/volumeSuara.svg" alt="" width="100px"> Bicara</button>
+                        <a href="/pengguna" class="flex flex-col items-center font-medium bg-card p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/user.svg" alt="" width="100px"> Pengguna</a>
+                        <a href="/navigasi" class="flex flex-col items-center font-medium bg-card p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/maps.svg" alt="" width="100px"> Navigasi</a>
+                        <a href="/riwayat" class="flex flex-col items-center font-medium bg-card p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/history.svg" alt="" width="100px"> Riwayat</a>
+                        <a href="/bantuan" class="flex flex-col items-center font-medium bg-card p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/bantuanMenu.svg" alt="" width="100px"> Bantuan</a>
                     </div>
                 </div>
-                <div class="lg:basis-[30%] w-full lg:h-[80vh] bg-[#173865] flex gap-5 p-5 items-center justify-center lg:flex-col flex-row rounded-[20px] h-full">
-                    <button class="basis-[50%] bg-[#122F58] p-4 rounded-[15px] drop-shadow-xl lg:text-[100%] text-[114%]" id="tombolAktif" onclick="activeSound()"><img src="/asset/image/volumeUP.svg" alt="" width="150px">Suara Aktif</button>
-                    <button class="basis-[50%] bg-[#122F58] p-4 rounded-[15px] drop-shadow-xl" id="tombolNonaktif" onclick="nonActiveSound()"><img src="/asset/image/volumeDown.svg" alt="" width="150px">Suara Non-Aktif</button>
+                <div class="lg:basis-[30%] w-full lg:h-[80vh] bg-wrapper flex gap-5 p-5 items-center justify-center lg:flex-col flex-row rounded-[20px] h-full">
+                    <button class="basis-[50%] h-full bg-card p-4 rounded-[15px] drop-shadow-xl lg:text-[100%] text-[114%]" id="tombolAktif" onclick="activeSound()"><img src="/asset/image/volumeUP.svg" alt="" width="150px">Aktif</button>
+                    <button class="basis-[50%] h-full bg-card p-4 rounded-[15px] drop-shadow-xl" id="tombolNonaktif" onclick="nonActiveSound()"><img src="/asset/image/volumeDown.svg" alt="" width="150px">Non-Aktif</button>
                 </div>
             </div>
         </div>
@@ -100,7 +97,7 @@
         function speakSensor(jarak) {
             var speech = new SpeechSynthesisUtterance1();
             // Set the text to be spoken
-            speech.text = "ada object pada jarak "+jarak;
+            speech.text = "ada object pada jarak " + jarak;
             speech.lang = 'id-ID';
             // Use the default speech synthesizer
             var speechSynthesis1 = window.speechSynthesis;
