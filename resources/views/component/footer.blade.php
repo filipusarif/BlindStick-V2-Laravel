@@ -1,4 +1,4 @@
-<footer class="lg:h-[335px] w-full bg-[#0d1243] text-active font-poppins font-light text-white rounded-[15px] relative" id="footer">
+<footer class="lg:h-[335px] w-full bg-[#0d1243] text-active font-poppins font-light rounded-[15px] relative" id="footer">
     <div class="container p-6 m-auto grid place-items-center h-[90%]">
         <div class="flex flex-col lg:flex-row items-start h-fit  w-full gap-[15px] text-[14.5px]">
             <div class=" basis-[55%] lg:text-center">
@@ -14,9 +14,9 @@
             </div>
             <div class=" basis-[13%] ">
                 <h1 class="text-[24px] font-bold">Terhubung</h1>
-                <p>blindstick</p>
-                <p>@blindstick10</p>
-                <p>blindstick</p>
+                <p>blindstick.id</p>
+                <p>@blindstick.id</p>
+                <p>blindstick.id</p>
             </div>
         </div>
     </div>

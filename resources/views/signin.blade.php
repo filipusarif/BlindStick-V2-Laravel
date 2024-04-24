@@ -10,7 +10,7 @@
     <script type="text/javascript" src="{{ ('jquery/jquery.min.js') }}"></script>
 </head>
 
-<body class="bg-[#215695] font-poppins ">
+<body class="bg-primary font-poppins ">
     <nav class="fixed z-50 flex items-center justify-between w-full h-[50px] px-[3rem] lg:mt-6">
         <a href="/"><img src="asset/image/logoLogin.svg" alt="Blind Stick Logo" class="lg:w-[90px] w-[70px]" ></a>
         <a href="/" class="lg:block hidden"><img src="asset/image/homeLogin.svg" alt="Home" width="40px"></a>
@@ -20,7 +20,7 @@
         {{session('message')}}
     </div>
     @endif
-    <section class="flex lg:flex-row flex-col bg-white items-center text-[#6C6C6C] lg:bg-gradient-to-tr lg:from-[#071a30] lg:via-[#215695] lg:via-80% lg:to-[#215695] overflow-hidden h-screen w-full relative lg:pt-0 lg:px-0 pt-10 px-5">
+    <section class="flex lg:flex-row flex-col bg-white items-center text-[#6C6C6C] lg:bg-gradient-to-r lg:from-primary lg:via-primary lg:via-20% lg:to-[#111F86]  overflow-hidden h-screen w-full relative lg:pt-0 lg:px-0 pt-10 px-5">
         <div class="lg:h-full h-screen w-full  basis-[100%] lg:basis-[40%] bg-white px-[2rem] lg:px-[3rem]">
             <div class="h-full lg:w-[90%] w-full mx-auto flex flex-col items-center justify-center">
                 <h1 class="text-[250%] font-extrabold text-[#215695]">Daftar</h1>

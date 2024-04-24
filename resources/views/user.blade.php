@@ -15,10 +15,10 @@
     <!-- navbar -->
     @include('component/navbar')
 
-    <section class="flex justify-center   bg-white items-center text-[#6C6C6C] lg:bg-gradient-to-tr lg:from-[#071a30] lg:via-[#215695] lg:via-80% lg:to-[#215695] overflow-hidden h-screen w-full relative lg:pt-0 lg:px-0 pt-10 px-5">
+    <section class="flex justify-center   bg-white items-center text-[#6C6C6C] lg:bg-primary overflow-hidden h-screen w-full relative lg:pt-0 lg:px-0 pt-10 px-5">
         <div class="h-[80%] w-full rounded-[20px] basis-[100%] lg:basis-[40%] bg-white px-[2rem] lg:px-[3rem]">
             <div class="h-full lg:w-[90%] w-full mx-auto flex flex-col items-center justify-center">
-                <h1 class="text-[250%] font-extrabold text-[#215695]">Ubah</h1>
+                <h1 class="text-[250%] font-extrabold text-primary">Ubah</h1>
                 <form action="{{route('actionuser')}}" method="post" class="min-h-[30%] w-full mt-1">
                     @csrf
                     <div id="pengguna" class="h-full w-full">

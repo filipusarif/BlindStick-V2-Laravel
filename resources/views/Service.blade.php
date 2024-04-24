@@ -56,9 +56,9 @@
         window.onscroll = () => {
             const nav = document.querySelector('#navBar');
             if (this.scrollY <= 10) {
-                nav.className = 'transition ease-in-out delay-200  border-gray-200 dark:bg-[#215695] dark:md:bg-transparent bg-[#215695] dark:bg-opacity-60   fixed w-full z-50';
+                nav.className = 'transition ease-in-out delay-200  border-gray-200 dark:bg-primary dark:md:bg-transparent bg-primary dark:bg-opacity-60    fixed w-full z-50';
             } else {
-                nav.className = 'transition ease-in-out delay-200  border-gray-200 dark:bg-[#215695] bg-[#215695] dark:bg-opacity-60 backdrop-blur-md   fixed w-full z-50';
+                nav.className = 'transition ease-in-out delay-200  border-gray-200 dark:bg-[#070a24] bg-[#070a24] dark:bg-opacity-60 backdrop-blur-md   fixed w-full z-50';
             }
         };
         document.getElementById('userButton').addEventListener('click', function() {

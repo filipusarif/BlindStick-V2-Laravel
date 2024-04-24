@@ -225,7 +225,7 @@
                         <h4 class="font-extrabold text-[14px]">Premium</h4>
                     </div>
                     <p class="text-[14px] font-medium text-nonActive">Paket bagi pemilik tongkat untuk mendapatkan pembaruan layanan aplikasi selama 12 bulan.</p>
-                    <a href="" class="bg-secondary px-5 rounded-lg font-bold py-3 text-center">Beli Sekarang</a>
+                    <a href="https://telegram.me/Filpph" class="bg-secondary px-5 rounded-lg font-bold py-3 text-center">Beli Sekarang</a>
                     <div class="w-full my-2 h-[2px] bg-[#282C4F]"></div>
                     <div class="flex flex-col h-[180px] gap-3 justify-start items-start font-medium text-[13px] text-nonActive">
                         <div class="flex flex-row justify-start items-center gap-2">
@@ -257,7 +257,7 @@
                         <h4 class="font-extrabold text-[14px]">Basic</h4>
                     </div>
                     <p class="text-[14px] font-medium text-nonActive">Paket eksklusif dengan mendapatkan tongkat IoT dan bonus layanan aplikasi selama 6 bulan.</p>
-                    <a href="" class="bg-secondary px-5 rounded-lg font-bold py-3 text-center">Beli Sekarang</a>
+                    <a href="https://telegram.me/Filpph" class="bg-secondary px-5 rounded-lg font-bold py-3 text-center">Beli Sekarang</a>
                     <div class="w-full my-2 h-[2px] bg-[#282C4F]"></div>
                     <div class="flex flex-col h-[180px] gap-3 justify-start items-start font-medium text-[13px] text-nonActive">
                         <div class="flex flex-row justify-start items-center gap-2">
@@ -285,7 +285,7 @@
                         <h4 class="font-extrabold text-[14px]">Standar</h4>
                     </div>
                     <p class="text-[14px] font-medium text-nonActive">Paket bagi pemilik tongkat untuk mendapatkan pembaruan layanan aplikasi selama 1 bulan.</p>
-                    <a href="" class="bg-secondary px-5 rounded-lg font-bold py-3 text-center">Beli Sekarang</a>
+                    <a href="https://telegram.me/Filpph" class="bg-secondary px-5 rounded-lg font-bold py-3 text-center">Beli Sekarang</a>
                     <div class="w-full my-2 h-[2px] bg-[#282C4F]"></div>
                     <div class="flex flex-col h-[180px] gap-3 justify-start items-start font-medium text-[13px] text-nonActive">
                         <div class="flex flex-row justify-start items-center gap-2">
@@ -329,15 +329,15 @@
                         </div>
                     </div>
                     <label for="kritik" class=" font-semibold text-[#F2F7EE] mt-5">Pesan Bantuan</label>
-                    <textarea name="kritik" id="kritik" cols="30" rows="5" style="resize: none;" class="w-full bg-[#232B50] outline-none p-4 rounded-md" placeholder="Masukkan Pesan"></textarea>
-                    <button type="submit" class="text-right py-3 px-10 mt-5 bg-secondary rounded-lg font-medium">Kirim Pesan</button>
+                    <textarea name="inputKritik" id="kritik" cols="30" rows="5" style="resize: none;" class="w-full bg-[#232B50] outline-none p-4 rounded-md" placeholder="Masukkan Pesan"></textarea>
+                    <button type="submit" class="text-right py-3 px-10 mt-5 bg-secondary rounded-lg font-medium" onclick="return alert('Pesan anda telah terkirim')">Kirim Pesan</button>
                 </form>
             </div>
             <div class="basis-[35%] bg-[#101849] h-[500px] p-7 rounded-lg">
                 <h1 class=" font-extrabold text-[24px] leading-7">Berlangganan untuk menerima pesan pembaruan.</h1>
                 <p class=" font-medium text-nonActive text-[14px] mt-2">Berlangganan untuk menerima informasi terbaru dan pembaruan secara langsung ke email Anda.</p>
                 <div class="bg-[#232B50] h-[2px] w-full my-10 rounded-full"></div>
-                <form action="" method="post" class="w-full gap-3 flex flex-col justify-start items-start pb-10">
+                <form action="" method="" class="w-full gap-3 flex flex-col justify-start items-start pb-10">
                     @csrf
                     <input type="text" name="inputNameLangganan" id="nameLangganan" class="bg-[#232B50] py-3 px-4 w-full rounded-md border-none border-[#2AA7D6] border outline-none " placeholder="Masukkan Nama Anda">
                     <input type="email" name="inputEmailLangganan" id="emailLangganan" class="bg-[#232B50] py-3 px-4 w-full rounded-md border-none border-[#2AA7D6] border outline-none " placeholder="Masukkan Email Anda">
@@ -377,6 +377,7 @@
             var speechSynthesis = window.speechSynthesis;
             speechSynthesis.speak(speech);
         }
+        document.addEventListener('DOMContentLoaded', speakOnPageLoad());
 
         // JavaScript untuk membuat titik-titik acak
         function createRandomPoints() {

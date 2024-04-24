@@ -43,14 +43,15 @@
                                 @auth
                                 <form action="/logout" method="post" onsubmit="return confirm('Apakah anda yakin keluar?');">
                                     @csrf
-                                    <button type="submit" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                        Logout
+                                    <button type="submit" class=" flex gap-2 w-full items-center text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                    <img src="asset\image\Background\Exiticon.svg" width="30px" alt="">     
+                                    Logout
                                     </button>
                                 </form>
                                 @else
                                 <div class="flex flex-col p-2 gap-2">
-                                    <a href="/masuk">Masuk</a>
-                                    <a href="/daftar">Daftar</a>
+                                    <a href="/masuk" class="flex items-center gap-2"><img src="asset\image\Background\loginIcon.svg" width="30px" alt="">Masuk</a>
+                                    <a href="/daftar " class="flex items-center gap-2"><img src="asset\image\Background\daftarIcon.svg" width="30px" alt="">Daftar</a>
                                 </div>
                                 @endauth
                             </div>

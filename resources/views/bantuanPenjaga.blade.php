@@ -17,26 +17,26 @@
     <!-- navbar -->
     @include('component/navbar')
 
-    <section class=" text-slate-200 bg-gradient-to-tr  from-[#071a30] via-[#215695] via-80% to-[#215695] overflow-hidden min-h-screen w-full relative lg:pt-0 lg:px-0 pt-10 px-5">
-        <div class="">
+    <section class=" text-slate-200 bg-primary overflow-hidden min-h-screen w-full relative lg:pt-0 lg:px-0 pt-10 px-5">
+        <!-- <div class="">
             <img src="asset/image/kubus.svg" alt="" class="-left-56 -top-20 absolute opacity-50">
-        </div>
+        </div> -->
 
         <div class="container min-h-[80vh] mx-auto pt-[3%] pb-5 relative">
-            <h1 class="text-[200%] text-center font-extrabold leading-[60px] text-transparent bg-clip-text bg-gradient-to-r from-[#2996E5] to-[#28D9F1]">Bantuan Penjaga</h1>
-            <p class="text-center -mt-2 mb-4">Sedia Setiap Saat, dalam keadaan darurat</p>
+            <h1 class="text-[200%] text-center font-extrabold leading-[60px] text-active">Bantuan Penjaga</h1>
+            <p class="text-center -mt-2 mb-4 text-nonActive">Sedia Setiap Saat, dalam keadaan darurat</p>
             <div class="flex lg:flex-row flex-col-reverse items-center justify-center min-h-[80vh]  gap-3">
                 <div class=" flex flex-col basis-[70%] gap-5  w-full h-full lg:h-[80vh] ">
-                    <div class="lg:basis-[70%]  h-[700px] lg:h-auto bg-[#173865] flex flex-col lg:flex-row justify-center items-center rounded-[20px]">
-                        <div class="lg:w-[50%] w-full h-[400px] lg:h-full text-center lg:border-r-[4px] border-[#122F58]">
-                            <h1 class="w-full h-[30%] bg-[#122F58] rounded-tl-[10px] grid place-items-center text-[200%] font-bold">Status</h1>
+                    <div class="lg:basis-[70%]  h-[700px] lg:h-auto bg-wrapper flex flex-col lg:flex-row justify-center items-center rounded-[20px]">
+                        <div class="lg:w-[50%] w-full h-[400px] lg:h-full text-center lg:border-r-[4px] border-card">
+                            <h1 class="w-full h-[30%] bg-card rounded-tl-[10px] grid place-items-center text-[200%] font-bold">Status</h1>
                             <p class="w-full h-[70%] font-extrabold grid place-items-center text-[170%] lg:text-[300%]" id="obj">Loading</p>
                         </div>
                         <div class="lg:w-[50%] w-full h-auto  lg:h-full text-center">
-                            <h1 class="w-full h-[30%] bg-[#122F58] rounded-tr-[10px] grid place-items-center text-[200%] font-bold">Kirim Signal</h1>
+                            <h1 class="w-full h-[30%] bg-card rounded-tr-[10px] grid place-items-center text-[200%] font-bold">Kirim Signal</h1>
                             <form action="{{url('bantuan-signal')}}" method="post" class=" h-[250px] flex items-center flex-col gap-5 justify-center pb-5">
                                 @csrf
-                                <select name="signalName" id="signal" class="bg-[#1C4B83] py-2 px-3 rounded-[37px] border-1 border-[#2AA7D6] border outline-none text-[120%]">
+                                <select name="signalName" id="signal" class="bg-[#232B50] py-2 px-3 rounded-[37px] border-2 border-card border outline-none text-[120%]">
                                     <option value="1">Segera Datang</option>
                                     <option value="2">Nanti Kesana</option>
                                     <option value="3">Tidak Bisa Sekarang</option>
@@ -44,22 +44,22 @@
                                 </select>
                                 <input type="hidden" name="id" value="esp32_01">
                                 <!-- <input type="text" name="signalName" id="signal" class="bg-[#1C4B83] py-2 px-3 rounded-[37px] border-1 border-[#2AA7D6] border outline-none"> -->
-                                <button type="submit" class="text-right py-3 px-14 bg-[#3DCBB4] rounded-[30px] font-medium">Kirim</button>
+                                <button type="submit" class="text-right py-3 px-14 bg-btnHome rounded-[30px] font-medium">Kirim</button>
                                 <!-- <p class="w-full h-[70%] font-extrabold grid place-items-center text-[170%] lg:text-[300%]" id="jarak" >loading</p> -->
                             </form>
                         </div>
                     </div>
-                    <div class="bg-[#173865] w-full h-fit flex py-4 rounded-[18px] items-center justify-center gap-5 flex-wrap">
-                        <button class="flex flex-col items-center font-medium bg-[#122F58] p-4 rounded-[10px] drop-shadow-xl   " onclick="speak()"><img src="/asset/image/volumeSuara.svg" alt="" width="100px"> Bicara</button>
-                        <a href="/pengguna" class="flex flex-col items-center font-medium bg-[#122F58] p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/user.svg" alt="" width="100px"> Pengguna</a>
-                        <a href="/navigasi" class="flex flex-col items-center font-medium bg-[#122F58] p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/maps.svg" alt="" width="100px"> Navigasi</a>
-                        <a href="/riwayat" class="flex flex-col items-center font-medium bg-[#122F58] p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/history.svg" alt="" width="100px"> Riwayat</a>
-                        <a href="/bantuan" class="flex flex-col items-center font-medium bg-[#122F58] p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/bantuanMenu.svg" alt="" width="100px"> Bantuan</a>
+                    <div class="bg-wrapper w-full h-fit flex py-4 rounded-[18px] items-center justify-center gap-5 flex-wrap">
+                        <button class="flex flex-col items-center font-medium bg-card p-4 rounded-[10px] drop-shadow-xl   " onclick="speak()"><img src="/asset/image/volumeSuara.svg" alt="" width="100px"> Bicara</button>
+                        <a href="/pengguna" class="flex flex-col items-center font-medium bg-card p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/user.svg" alt="" width="100px"> Pengguna</a>
+                        <a href="/navigasi" class="flex flex-col items-center font-medium bg-card p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/maps.svg" alt="" width="100px"> Navigasi</a>
+                        <a href="/riwayat" class="flex flex-col items-center font-medium bg-card p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/history.svg" alt="" width="100px"> Riwayat</a>
+                        <a href="/bantuan" class="flex flex-col items-center font-medium bg-card p-4 rounded-[10px] drop-shadow-xl   "><img src="/asset/image/bantuanMenu.svg" alt="" width="100px"> Bantuan</a>
                     </div>
                 </div>
-                <div class="lg:basis-[30%] w-full lg:h-[80vh] bg-[#173865] flex gap-5 p-5 items-center justify-center lg:flex-col flex-row rounded-[20px] h-full">
-                    <button class="basis-[50%] bg-[#122F58] p-4 rounded-[15px] drop-shadow-xl" id="tombolAktif" onclick="activeSound()"><img src="/asset/image/volumeUP.svg" alt="" width="150px"></button>
-                    <button class="basis-[50%] bg-[#122F58] p-4 rounded-[15px] drop-shadow-xl" id="tombolNonaktif" onclick="nonActiveSound()"><img src="/asset/image/volumeDown.svg" alt="" width="150px"></button>
+                <div class="lg:basis-[30%] w-full lg:h-[80vh] bg-wrapper flex gap-5 p-5 items-center justify-center lg:flex-col flex-row rounded-[20px] h-full">
+                    <button class="basis-[50%] bg-card p-4 rounded-[15px] drop-shadow-xl" id="tombolAktif" onclick="activeSound()"><img src="/asset/image/volumeUP.svg" alt="" width="150px"></button>
+                    <button class="basis-[50%] bg-card p-4 rounded-[15px] drop-shadow-xl" id="tombolNonaktif" onclick="nonActiveSound()"><img src="/asset/image/volumeDown.svg" alt="" width="150px"></button>
                 </div>
             </div>
         </div>
@@ -73,9 +73,9 @@
         window.onscroll = () => {
             const nav = document.querySelector('#navBar');
             if (this.scrollY <= 10) {
-                nav.className = 'transition ease-in-out delay-200  border-gray-200 dark:bg-[#215695] dark:md:bg-transparent bg-[#215695] dark:bg-opacity-60 fixed w-full z-50';
+                nav.className = 'transition ease-in-out delay-200  border-gray-200 dark:bg-primary dark:md:bg-transparent bg-primary dark:bg-opacity-60    fixed w-full z-50';
             } else {
-                nav.className = 'transition ease-in-out delay-200  border-gray-200 dark:bg-[#215695] bg-[#215695] dark:bg-opacity-60 backdrop-blur-md   fixed w-full z-50';
+                nav.className = 'transition ease-in-out delay-200  border-gray-200 dark:bg-[#070a24] bg-[#070a24] dark:bg-opacity-60 backdrop-blur-md   fixed w-full z-50';
             }
         };
 
