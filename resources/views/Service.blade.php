@@ -95,7 +95,7 @@
         }
 
         function speakSensor(jarak) {
-            var speech = new SpeechSynthesisUtterance1();
+            var speech = new SpeechSynthesisUtterance();
             // Set the text to be spoken
             speech.text = "ada object pada jarak " + jarak;
             speech.lang = 'id-ID';
